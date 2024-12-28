@@ -54,14 +54,19 @@ public class LCA {
         // Our thinking: We will do DFS preorder traversal and check if we have found the required nodes, if by both left and right ways our ans is not coming to be null, we will then return the node we are at as our ans since it will be the first path where both our ans are not null
         
         // These three are our base cases that in case we reach null or find the required Node
-        if(root == null){
-            return null;
-        }
-        if(root == p){
-            return p;
-        }
-        if(root == q){
-            return q;
+        // if(root == null){
+        //     return null;
+        // }
+        // if(root == p){
+        //     return p;
+        // }
+        // if(root == q){
+        //     return q;
+        // }
+
+        // These fking three conditons can be made one
+        if(root == null || root == p || root == q){
+            return root;
         }
 
         // While returning we have three possibilites: we found p, we found q, we found both
